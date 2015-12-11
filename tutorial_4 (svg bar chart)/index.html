@@ -11,6 +11,7 @@
 
 			var w = 500;
 			var h = 100;
+			var barPadding = 1;
 
 			var svg = d3.select("body")
 				.append("svg")
@@ -25,8 +26,10 @@
 					return i * (w / dataset.length);
 				})
 				.attr("y", 0)
-				.attr("width", 20)
-				.attr("height", 100);
+				.attr("width", w / dataset.length - barPadding)
+				.attr("height", function(d) {
+					return d * 4;
+				});
 		</script>
 	</body>
 </html>
