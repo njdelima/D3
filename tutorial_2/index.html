@@ -10,6 +10,7 @@
 				width: 20px;
 				height: 75px;
 				background-color: teal;
+				margin-right: 2px;
 			}
 		</style>
 	</head>
@@ -21,7 +22,11 @@
 				.data(dataset)
 				.enter()
 				.append("div")
-				.attr("class", "bar");
+				.attr("class", "bar")
+				.style("height", function(d) {
+					var barHeight = d * 5;
+					return barHeight + "px";
+				});
 
 
 		</script>
