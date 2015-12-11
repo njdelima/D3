@@ -4,10 +4,25 @@
 		<meta charset="utf-8">
 		<title>D3 Test</title>
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		<style>
+			div.bar {
+				display: inline-block;
+				width: 20px;
+				height: 75px;
+				background-color: teal;
+			}
+		</style>
 	</head>
 	<body>
 		<script type="text/javascript">
 			var dataset = [ 5, 10, 15, 20, 25 ];
+
+			d3.select("body").selectAll("div")
+				.data(dataset)
+				.enter()
+				.append("div")
+				.attr("class", "bar");
+
 
 		</script>
 	</body>
